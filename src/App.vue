@@ -1,5 +1,5 @@
 <template>
-  <div class="surface-section px-4 py-8 md:px-6 lg:px-8">
+  <div>
    
     <RouterView></RouterView>
   </div>
@@ -35,7 +35,7 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
+<!-- <style scoped>
 header {
   line-height: 1.5;
   max-height: 100vh;
@@ -181,4 +181,4 @@ nav a:first-of-type {
   outline: none;
   border-color: blue;
 }
-</style>
+</style> -->

@@ -83,12 +83,13 @@
           class="mr-2"
           @click="handleClickEdit(one.data)"
         />
-        <!-- <Button
+        <Button
           icon="pi pi-trash"
           outlined
           rounded
           severity="danger"
-        /> -->
+          @click="delOne(one.data)"
+        />
       </template>
     </Column>
     <template #expansion="one">
@@ -196,7 +197,7 @@ export default defineComponent({
 
     filteredResources() {
       if (this.searchQuery) {
-        return this.products.filter((one) => {
+        return this.products.filter((one: { name: string; }) => {
           return one.name.startsWith(this.searchQuery);
         });
       } else {
@@ -214,6 +215,7 @@ export default defineComponent({
       "delete",
       "update",
       "create",
+      "delOne"
     ]),
 
     // selectRow() {
@@ -240,12 +242,18 @@ export default defineComponent({
       for (let id of ids) {
         await this.delete(id);
       }
-      // this.selected.forEach( (one:Product) => {
-      //   //lấy phần tử trong mảng selected
-      //   await this.delete(Number(one.id));
-      // });
+      this.selected.forEach( (one:Product) => {
+        //lấy phần tử trong mảng selected
+        this.delete(Number(one.id));
+      });
       await this.fetchData();
     },
+
+    async delOne(one: Product){
+        if(!one.id) return
+        await this.delete(one.id);
+        await this.fetchData()
+      },
 
     // func handle click button edit
     handleClickAdd() {

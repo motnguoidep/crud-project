@@ -106,7 +106,7 @@ body {
   min-height: 100vh;
   background-size: cover;
   background-position: center;
-  background: url(https://scontent.fdad1-4.fna.fbcdn.net/v/t1.6435-9/133436800_453184679182196_6067743507851843783_n.jpg?stp=dst-jpg_p600x600&_nc_cat=105&cb=99be929b-59f725be&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=IZWdDtRvMvMAX-wHMU3&_nc_ht=scontent.fdad1-4.fna&oh=00_AfDVTEvtTMbMUwnEA-se-zELRwR8-ODMsfJHoXbcXAHdqg&oe=64DEEE7C);
+  background: url(https://scontent.fhan20-1.fna.fbcdn.net/v/t1.6435-9/133760707_453184742515523_2572985989592149133_n.jpg?stp=dst-jpg_p843x403&_nc_cat=111&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=-3BjyGochdgAX8zuGeG&_nc_ht=scontent.fhan20-1.fna&_nc_e2o=s&oh=00_AfCdxicmbN-x2cyr2TafGBVC1_i4Rnz7ZsnLnFbsQFHRUQ&oe=6544CDA2);
 }
 .flexError {
   display: flex;

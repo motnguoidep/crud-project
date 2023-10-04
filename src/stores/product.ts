@@ -66,6 +66,10 @@ export const productStore = defineStore("productStore", {
           console.log(error);
         });
     },
+    async delOne(id: number){
+      axios.delete(`https://64953103b08e17c91791b68d.mockapi.io/crud/${id}`);
+
+   },
 
     async delete(id: number) {
       const r = await axios

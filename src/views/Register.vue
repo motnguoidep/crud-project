@@ -28,7 +28,8 @@
 
 <script setup>
 import {ref} from "vue";
-import {getAuth, createUserWithEmailAndPassword} from "firebase/auth";
+// import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword,GoogleAuthProvider, signInWithPopup} from "firebase/auth";
 import { useRouter } from "vue-router";
 const email = ref("");
 const password = ref("");
@@ -45,6 +46,18 @@ const register = () =>{
         console.log(error.code)
     });
 }
+
+const signInWithGoogle = () => {
+        const provider = new GoogleAuthProvider();
+        signInWithPopup(getAuth(),provider)
+        .then((result) =>{
+            console.log(result.user);
+            router.push('/product')
+        })
+        .catch((error) =>{
+        console.log(error.code)
+    });
+    }
 </script>
 
 <style scoped>
@@ -62,7 +75,7 @@ body {
     min-height: 100vh;
     background-size: cover ;
     background-position: center;
-    background: url(https://scontent-hkg4-2.xx.fbcdn.net/v/t39.30808-6/358545626_760179032549240_1641710964372345528_n.jpg?stp=dst-jpg_p960x960&_nc_cat=1&cb=99be929b-59f725be&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=yVyxsGPGpaQAX-YqXcy&_nc_ht=scontent-hkg4-2.xx&oh=00_AfCu4JPC9TNarzx0U8jIxVMEXXRmDkpfJ96PnuXkI3Pn7A&oe=64B7305A) ;
+    background: url(https://scontent.fhan20-1.fna.fbcdn.net/v/t1.6435-9/135523774_453184712515526_2434962383091556590_n.jpg?stp=dst-jpg_p960x960&_nc_cat=102&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=SqlE8e75TxkAX-YuHP0&_nc_ht=scontent.fhan20-1.fna&_nc_e2o=s&oh=00_AfBqOBT2-9TBqO4Hot9R3IJRiEAWgQgxkskLDRIHMyTNvg&oe=6544A10E);
 }
 .wrapper {
     width: 420px;
